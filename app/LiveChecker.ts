@@ -1,10 +1,10 @@
 import { Live } from './LiveStatus.d.ts';
-import { KakaoTvVideoLoader } from './loader/VegaKakaoTvVideoLoader.ts';
-import { KakaoTvChannelLoader } from './loader/VegaKakoTvChannelLoader.ts';
+import { VideoLoader } from './loader/VideoLoader.ts';
+import { ChannelLoader } from './loader/ChannelLoader.ts';
 
-export class VegaKakaoTvLiveChecker {
-  #channelLoader = new KakaoTvChannelLoader();
-  #videoLoader = new KakaoTvVideoLoader();
+export class LiveChecker {
+  #channelLoader = new ChannelLoader();
+  #videoLoader = new VideoLoader();
 
   async getLiveStatus(channelId: string): Promise<Live | null> {
     const channel = await this.#channelLoader.load(channelId);

@@ -1,4 +1,4 @@
-export class KakaoTvVideoLoader {
+export class VideoLoader {
   async load(videoId: string): Promise<KakaoTvVideo | null> {
     const body = await this.#request(videoId);
     if (!body || !body.liveLink) {

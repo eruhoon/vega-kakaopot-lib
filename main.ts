@@ -1,8 +1,8 @@
-import { KakaoTvVideoLoader } from './app/loader/VegaKakaoTvVideoLoader.ts';
-import { KakaoTvChannelLoader } from './app/loader/VegaKakoTvChannelLoader.ts';
+import { VideoLoader } from './app/loader/VideoLoader.ts';
+import { ChannelLoader } from './app/loader/ChannelLoader.ts';
 
-const channel = await new KakaoTvChannelLoader().load('2669634');
+const channel = await new ChannelLoader().load('2669634');
 if (channel?.videoId) {
-  const video = await new KakaoTvVideoLoader().load(channel.videoId);
+  const video = await new VideoLoader().load(channel.videoId);
   console.log(video);
 }
