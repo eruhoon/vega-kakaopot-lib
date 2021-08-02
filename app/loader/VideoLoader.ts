@@ -2,7 +2,7 @@ export class VideoLoader {
   async load(videoId: string): Promise<Video | null> {
     const body = await this.#request(videoId);
     if (!body || !body.liveLink) {
-      console.error('KakaoTvVideoLoader: structure error');
+      console.error('VideoLoader: structure error');
       return null;
     }
 
