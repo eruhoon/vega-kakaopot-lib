@@ -1,5 +1,5 @@
 export class VideoLoader {
-  async load(videoId: string): Promise<KakaoTvVideo | null> {
+  async load(videoId: string): Promise<Video | null> {
     const body = await this.#request(videoId);
     if (!body || !body.liveLink) {
       console.error('KakaoTvVideoLoader: structure error');
@@ -14,7 +14,7 @@ export class VideoLoader {
       return null;
     }
 
-    const video: KakaoTvVideo = {
+    const video: Video = {
       id: live.id,
       nickname: channel.name,
       channelName: channel.name,
@@ -54,7 +54,7 @@ export class VideoLoader {
   }
 }
 
-type KakaoTvVideo = {
+type Video = {
   id: number;
   nickname: string;
   channelName: string;

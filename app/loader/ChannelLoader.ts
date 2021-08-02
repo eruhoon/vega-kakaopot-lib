@@ -1,11 +1,11 @@
-type RawKakaoTvChannel = {
+type Channel = {
   id: string;
   icon: string;
   videoId: string;
 };
 
 export class ChannelLoader {
-  async load(channelId: string): Promise<RawKakaoTvChannel | null> {
+  async load(channelId: string): Promise<Channel | null> {
     const res = await this.#request(channelId);
     if (!res) {
       return null;
