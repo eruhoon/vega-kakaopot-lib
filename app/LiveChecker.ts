@@ -1,4 +1,4 @@
-import { Live } from './LiveStatus.d.ts';
+import { Live } from './Live.d.ts';
 import { VideoLoader } from './loader/VideoLoader.ts';
 import { ChannelLoader } from './loader/ChannelLoader.ts';
 
